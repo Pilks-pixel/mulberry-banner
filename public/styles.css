@@ -1,11 +1,79 @@
 /* =======
 Layout
 ======== */
+*, *::before, *::after {
+    box-sizing: border-box;    
+}
 
-p {
-    color: aqua;
+body {
+    margin: 1rem auto;
+}
+
+img{
+    max-width: 100%;
+}
+
+button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+main {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* List */
+.container__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    outline: 2px solid hotpink;
+}
+
+/* primary & logo image */
+.list__img {
+    position: relative;
+}
+
+.img__logo {
+    position: absolute;
+    z-index: 2;
+    inset: 176px 0 205px;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.img__primary {
+    width: 100%;
+    height: 444px;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* list content */
+.list__content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.content__btn {
+    max-width: 7px;
+    height: 12px;
+    margin: 3.5px;
 }
 
 /* =======
 Typography
 ======= */
+
+.content__title {
+    margin: 0 0;
+    font-size: 1.56rem;
+}
