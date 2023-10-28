@@ -4,17 +4,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./styles.css" />
-		<script defer src="../src/index.js"></script>
+		<script defer src="./src/index.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 		<title>Mulberry Banner</title>
 	</head>
 	<body>
 		<main class="container">
-			<ul class="container__list">
+			<ul class="container__banner">
 				<li>
-					<section class="list__img">
+					<section class="banner__img">
+						<img
+							class="img__primary img--active"
+							src="./assets/mini-alexa@2x.png"
+							alt="campaign photo"
+						/>
 						<img
 							class="img__primary"
 							src="./assets/lily@2x.png"
+							alt="campaign photo"
+						/>
+						<img
+							class="img__primary"
+							src="./assets/micro-bags@2x.png"
+							alt="campaign photo"
+						/>
+						<img
+							class="img__primary"
+							src="./assets/mens-scarf-and-briefcase@2x.png"
 							alt="campaign photo"
 						/>
 						<img
@@ -23,7 +39,7 @@
 							alt="Mulberry logo"
 						/>
 					</section>
-					<section class="list__content">
+					<section class="banner__content">
 						<div class="content__info">
 							<button class="info__btn">
 								<img src="./assets/arrow-left.png" alt="arrow left" />
@@ -34,7 +50,7 @@
 							</button>
 						</div>
 						<a
-							class="list__cta"
+							class="banner__cta"
 							href="https://www.mulberry.com/gb/shop/women/bags"
 							target="_blank"
 							><img src="./assets/cta-2x.png" alt="call to action"
