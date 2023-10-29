@@ -1,11 +1,133 @@
 /* =======
 Layout
 ======== */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
 
-p {
-    color: aqua;
+body {
+	margin: 1rem auto;
+}
+
+img {
+	max-width: 100%;
+}
+
+button {
+	border: none;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	background-color: inherit;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	margin: 0 auto;
+	max-width: 300px;
+}
+
+/* banner containers*/
+.container__banner {
+	height: 600px;
+	border: 1px solid #bcb5b9;
+	background-color: #f9f7f0;
+}
+
+.banner__content {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.banner__content,
+.banner__img {
+	margin-bottom: 30px;
+}
+
+/* primary | logo | cta images & text */
+.banner__img {
+	position: relative;
+	height: 435px;
+}
+
+.banner__cta,
+.img__logo {
+	margin: 0 auto;
+}
+
+.img__logo {
+	position: absolute;
+	z-index: 2;
+	inset: 176px 0 205px;
+	max-width: 200px;
+}
+
+.img__primary {
+	object-fit: cover;
+	object-position: top;
+}
+
+.img__primary,
+.list__text {
+	opacity: 0;
+}
+
+.title__list {
+	position: relative;
+	margin: 0 0;
+	width: 190px;
+	height: 50px;
+}
+
+.title__list > li,
+.img__primary {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.img--alexa {
+	opacity: 1;
+}
+
+.banner__cta {
+	max-width: 82px;
+}
+
+/* banner content */
+.content__info {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.info__btn {
+	max-width: 7px;
+	height: 12px;
 }
 
 /* =======
 Typography
 ======= */
+@font-face {
+	font-family: BemboStd;
+	src: url("./assets/BemboStd.woff2");
+}
+
+.info__title {
+	margin: 0;
+	text-align: center;
+	font-size: 1.56rem;
+	font-family: BemboStd;
+}
