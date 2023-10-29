@@ -1,37 +1,35 @@
 const slideImages = document.querySelectorAll(".img__primary");
-const navButtons = document.querySelectorAll('.info__btn')
-let activeSlideIndex
+const navButtons = document.querySelectorAll(".info__btn");
+let nextSlide;
 
+const getActiveSlide = () => {
+    return  Math.floor(tl.progress() * slideImages.length);
+}
+
+// button functionality
 navButtons.forEach(btn => {
-    btn.addEventListener("click", e => {
-			console.log(e.currentTarget.className.includes('next'));
+	btn.addEventListener("click", e => {
+		
+		if (e.currentTarget.className.includes("next")) {
+			nextSlide = getActiveSlide() + 1;
+		} else {
+			nextSlide = getActiveSlide() - 1;
+		}
 
-            activeSlideIndex = Math.floor(tl.progress() * slideImages.length)
+		if (nextSlide < 0) nextSlide = slideImages.length - 1;
+		if (nextSlide > slideImages.length - 1) nextSlide = 0;
 
-            if (e.currentTarget.className.includes('next')) {
-                tl.progress((activeSlideIndex + 1) / slideImages.length);
-                console.log((activeSlideIndex + 1) / slideImages.length);
-            } else {
-                tl.progress((activeSlideIndex - 1) / slideImages.length);
-                console.log((activeSlideIndex - 1) / slideImages.length);
-
-            }
-		});
-
-})
-
-console.log(slideImages)
+		tl.progress(nextSlide / slideImages.length);
+	});
+});
 
 // Carousel Fade in/out Animation
-let tl = gsap.timeline({defaults: {duration: 1}});
-
-tl.to(".img--alexa", { opacity: 1, ease: "power1.in",});
-tl.to(".img--alexa", { opacity: 0, ease: "power1.out",}, "+=2.5");
-tl.to(".img--lily", { opacity: 1, ease: "power1.in" }, "-=1");
-tl.to(".img--lily", { opacity: 0, ease: "power1.out" }, "+=2.5");
-tl.to(".img--micro", { opacity: 1, ease: "power1.in" }, "-=1");
-tl.to(".img--micro", { opacity: 0, ease: "power1.out" }, "+=2.5");
-tl.to(".img--scarf", { opacity: 1, ease: "power1.in" }, "-=1");
-tl.to(".img--scarf", { opacity: 0, ease: "power1.out" }, "+=2.5");
-
-
+let tl = gsap.timeline({ repeat: -1 }, { defaults: { duration: 0.5 , ease: "power1.inOut"} });
+tl.to(".img--alexa", { opacity: 0 }, "+=1.5");
+tl.to(".img--lily", { opacity: 1 }, "-=0.5");
+tl.to(".img--lily", { opacity: 0 }, "+=1.5");
+tl.to(".img--micro", { opacity: 1 }, "-=0.5");
+tl.to(".img--micro", { opacity: 0 }, "+=1.5");
+tl.to(".img--scarf", { opacity: 1 }, "-=0.5");
+tl.to(".img--scarf", { opacity: 0 }, "+=1.5");
+tl.to(".img--alexa", { opacity: 1 }, "-=0.5");
